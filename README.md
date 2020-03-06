@@ -54,6 +54,7 @@ This iteration covers project setup and starting the creation of the game.  Are 
 - Create and set up a Jasmine spec runner for ClickCounter.js.
 
 #### FEATURE : Have a way to count clicks.
+
 > As a user, I want to know how many clicks I have clicked, so that I know what my score is.
 - Can record a click.
 - Can retrieve a click count.
