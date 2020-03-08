@@ -7,5 +7,5 @@
 body{
     background-image: url(/imgs/stacked-cookies-closeup.jpg);
     background-size: cover;
-    background-position: center;
+    /* background-position: inherit; */
 }

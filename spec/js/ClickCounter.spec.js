@@ -39,8 +39,6 @@ describe('Clicking Calamity Tests:', () => {
             expect(underTest.getCompanionCount()).toBe(2);
         });
 
-
-
         it('Each Companion will increase its costs by 10% ', () => {
             for (let i = 0; i < 110; i++) {
                 underTest.countClick();
@@ -51,8 +49,33 @@ describe('Clicking Calamity Tests:', () => {
             expect(underTest.companionCost).toBe(100);
 
         });
+    });
+
+    describe('Clicking Compounder', () => {
+        it('Compounder available when ClickCounter equals 10', () => {
+            for (let i = 0; i < 10; i++) {
+                underTest.countClick();
+            }
+            underTest.buyCompounder()
+            expect(underTest.getCompounderCount()).toBe(1);
+        });
+
+        it("ClickCompounder should have 0 when new.", () => {
+            expect(underTest.getCompounderCount()).toBe(0);
+        });
+
+        it('Each Compounder will increase its costs by 10%', () => {
+            for (let i = 0; i <= 10; i++) {
+                underTest.countClick();
+            }
+            underTest.buyCompounder();
+            expect(underTest.getCompounderCount()).toBe(1)
+        })
+
 
     });
+
+
 
 
     // Math.pow(1.2, compounderCount)
