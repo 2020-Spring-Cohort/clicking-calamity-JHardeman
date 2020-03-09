@@ -1,11 +1,12 @@
 class ClickCount {
     constructor() {
         this.clickCount = 0;
-        // this.clickValue = 1;
         this.companionCount = 0;
         this.companionCost = 100;
         this.compounderCount = 0;
         this.compounderCost = 10;
+        this.clickValue = 1;
+   
     }
 
     countClick() {
@@ -16,9 +17,9 @@ class ClickCount {
         return this.clickCount;
     }
 
-    // getclickValue(){
-    //     return this.clickValue;
-    // }
+    getClickValue(){
+        return this.clickValue;
+    }
 
     getCompanionCount(){
         return this.companionCount;
@@ -32,6 +33,11 @@ class ClickCount {
         return this.compounderCount;
     }
 
+    getCompoundedClickCount(){
+        return this.getcompoundedClickCount;
+    }
+
+   
     getCompounderCost(){
         return this.compounderCost
     }
@@ -54,6 +60,7 @@ class ClickCount {
         if(this.clickCount >= this.compounderCost){
             this.clickCount -= this.compounderCost;
             this.compounderCount++;
+            this.clickValue = 1.2;
         }
     }
 
@@ -63,5 +70,14 @@ class ClickCount {
             this.compounderCost += Math.floor((this.compounderCost * 1.1));
         }
     }
+
+    getCompoundedClickValue(){
+        this.clickValue = Math.pow(1.2, this.getCompoundedClickCount());
+    }
+
+
+
+    // Math.pow(1.2, compounderCount)
+
 
   }

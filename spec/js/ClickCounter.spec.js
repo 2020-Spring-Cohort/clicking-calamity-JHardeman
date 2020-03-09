@@ -3,7 +3,7 @@ describe('Clicking Calamity Tests:', () => {
     beforeEach(() => {
         underTest = new ClickCount();
     })
-    describe('countClick() records clicks and ClickCounter can give the clickCount', () => {
+    describe('ClickCounter can give the clickCount', () => {
 
         it('countClick() 1 time should result in a clickCount of 1.', () => {
             underTest.countClick();
@@ -22,7 +22,7 @@ describe('Clicking Calamity Tests:', () => {
         });
 
 
-        it('1 Click Companion when ClickCounter equals 100', () => {
+        it('Click Companion available when ClickCounter equals 100', () => {
             for (let i = 0; i < 100; i++) {
                 underTest.countClick()
             }
@@ -72,15 +72,27 @@ describe('Clicking Calamity Tests:', () => {
             expect(underTest.getCompounderCount()).toBe(1)
         })
 
+        it('Compounder will increase the value of a click by 1.2', () => {
+            for(let i = 0; i<10; i++) {
+                underTest.countClick();
+            }
+            underTest.buyCompounder();
+            expect(underTest.getClickValue()).toBe(1.2);
+        })
 
-    });
+        it('Compounder increases click value by 1.2 exponentially based on Compounder Count', () => {
+            for(let i = 0; i <20; i ++){
+                underTest.countClick();
+            }
+            underTest.buyCompounder();
+            // underTest.compoundedClickValue();
+            underTest.buyCompounder();
+            // underTest.compoundedClickValue();
+            expect(underTest.getClickValue()).toBe(1.2);
+        })
 
 
-
-
-    // Math.pow(1.2, compounderCount)
-
-
+    }); 
 
 
 });
