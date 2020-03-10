@@ -17,6 +17,23 @@ class ClickCount {
         return this.clickCount;
     }
 
+    displayCompanionCount(){
+        return this.companionCount;
+    }
+
+    displayCompanionCost(){
+        return this.companionCost;
+    }
+
+    displayCompounderCount(){
+        return this.compounderCount;
+    }
+
+    displayCompounderCost(){
+        return this.compounderCost;
+    }
+
+
     getClickValue(){
         return this.clickValue;
     }
@@ -29,12 +46,8 @@ class ClickCount {
         return this.companionCost;
     } 
 
-    getCompounderCount(){
+    CompounderCount(){
         return this.compounderCount;
-    }
-
-    getCompoundedClickCount(){
-        return this.getcompoundedClickCount;
     }
 
    
@@ -46,6 +59,7 @@ class ClickCount {
         if (this.clickCount >= this.companionCost){
             this.clickCount -= this.companionCost;
             this.companionCount++;
+
         }
     }
 
@@ -60,7 +74,7 @@ class ClickCount {
         if(this.clickCount >= this.compounderCost){
             this.clickCount -= this.compounderCost;
             this.compounderCount++;
-            this.clickValue = 1.2;
+            this.clickValue = 1 * 1.2;
         }
     }
 
@@ -72,7 +86,7 @@ class ClickCount {
     }
 
     getCompoundedClickValue(){
-        this.clickValue = Math.pow(1.2, this.getCompoundedClickCount());
+        this.clickValue = Math.pow(1.2, this.CompounderCount());
     }
 
 

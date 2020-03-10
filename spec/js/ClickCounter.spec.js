@@ -57,11 +57,11 @@ describe('Clicking Calamity Tests:', () => {
                 underTest.countClick();
             }
             underTest.buyCompounder()
-            expect(underTest.getCompounderCount()).toBe(1);
+            expect(underTest.CompounderCount()).toBe(1);
         });
 
         it("ClickCompounder should have 0 when new.", () => {
-            expect(underTest.getCompounderCount()).toBe(0);
+            expect(underTest.CompounderCount()).toBe(0);
         });
 
         it('Each Compounder will increase its costs by 10%', () => {
@@ -69,7 +69,7 @@ describe('Clicking Calamity Tests:', () => {
                 underTest.countClick();
             }
             underTest.buyCompounder();
-            expect(underTest.getCompounderCount()).toBe(1)
+            expect(underTest.CompounderCount()).toBe(1)
         })
 
         it('Compounder will increase the value of a click by 1.2', () => {
@@ -80,16 +80,25 @@ describe('Clicking Calamity Tests:', () => {
             expect(underTest.getClickValue()).toBe(1.2);
         })
 
-        it('Compounder increases click value by 1.2 exponentially based on Compounder Count', () => {
-            for(let i = 0; i <20; i ++){
-                underTest.countClick();
-            }
-            underTest.buyCompounder();
-            // underTest.compoundedClickValue();
-            underTest.buyCompounder();
-            // underTest.compoundedClickValue();
-            expect(underTest.getClickValue()).toBe(1.2);
-        })
+        // it('Compounder increases click value by 1.2 exponentially based on Compounder Count', () => {
+        //     for(let i = 0; i <20; i ++){
+        //         underTest.countClick();
+        //     }
+        //     underTest.buyCompounder();
+        //     underTest.CompounderCount();
+        //     underTest.buyCompounder();
+        //     underTest.CompounderCount();
+        //     expect(underTest.getCompoundedClickValue).toBe(1.44);
+        // })
+
+        // it('Compounder Count will increase the number of Clicks made by a Companion',() => {
+        //     for(let i = 0; i < 110; i++){
+        //         underTest.ClickCount
+        //     }
+        //     underTest.buyCompanion();
+        //     underTest.buyCompounder();
+        //     expect(underTest.getClickValue()).toBe(1.2)
+        // })
 
 
     }); 
